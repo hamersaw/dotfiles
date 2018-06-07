@@ -1,0 +1,17 @@
+rofi.lines: 		10
+rofi.font:          mono 10
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+!rofi.color-window: #002b37, #002b37, #003642
+!rofi.color-window: #002b37, #ffffff, #003642
+!rofi.color-normal: #002b37, #819396, #002b37, #003642, #819396
+!rofi.color-active: #002b37, #008ed4, #002b37, #003642, #008ed4
+!rofi.color-urgent: #002b37, #da4281, #002b37, #003642, #da4281
+
+rofi.color-window: #3F3F3F,#000000
+rofi.color-normal: #3F3F3F,#DCDCCC,#383838,#4F4F4F,#FFFFEF
+rofi.color-active: #4C7073,#DCDCCC,#366060,#5C888B,#FFFFEF
+rofi.color-urgent: #8C5353,#DCDCCC,#7C4343,#9C6363,#FFFFEF
