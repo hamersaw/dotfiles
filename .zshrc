@@ -56,6 +56,7 @@ setopt HIST_IGNORE_ALL_DUPS
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # add dotfiles alias
+# https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
