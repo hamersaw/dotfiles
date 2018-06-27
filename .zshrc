@@ -53,7 +53,7 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 
 # update path
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.scripts:$HOME/.cargo/bin:$PATH"
 
 # add dotfiles alias
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
