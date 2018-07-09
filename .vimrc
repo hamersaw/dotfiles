@@ -11,6 +11,5 @@ set shiftwidth=4
 " set NERDTree configuration
 map <C-n> :NERDTreeToggle<CR>
 
-" enable solarized color scheme
-"set background=dark
-"colorscheme solarized
+" disable visualbells
+set vb t_vb=
