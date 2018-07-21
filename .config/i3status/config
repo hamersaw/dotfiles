@@ -38,6 +38,7 @@ volume master {
 battery all {
         format = "%status %percentage %remaining"
         #format = "%status %percentage"
+	path = "/sys/class/power_supply/BAT%d/uevent"
 }
 
 tztime local {

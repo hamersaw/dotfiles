@@ -1,4 +1,4 @@
 [ -d ~/Pictures/wallpapers ] && feh --bg-fill --randomize ~/Pictures/wallpapers
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
-compton &
+#compton &
 exec bspwm
