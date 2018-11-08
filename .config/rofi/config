@@ -1,5 +1,5 @@
 rofi.lines: 		10
-rofi.font:          mono 10
+rofi.font:          mono 11
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme

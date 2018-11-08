@@ -1,7 +1,7 @@
 !! urxvt
 URxvt*scrollBar:false
 !!URxvt.font: xft:Monospace:size=10
-URxvt.font: xft:DejaVu Sans Mono:size=9
+URxvt.font: xft:DejaVu Sans Mono:size=11
 
 !! Color Settings
 URxvt*background: #3f3f3f
@@ -44,4 +44,4 @@ URxvt.keysym.C-slash:  font-size:show
 !! dzen2
 dzen2.background: #3f3f3f
 !!dzen2.font: "xft:Monospace:size=10"
-dzen2.font: xft:DejaVu Sans Mono:size=9
+dzen2.font: xft:DejaVu Sans Mono:size=11
