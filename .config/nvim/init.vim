@@ -1,8 +1,10 @@
+" to install vim-plug: 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+" reload vimrc and :PlugInstall
+
 " configure plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'derekwyatt/vim-scala'
 call plug#end()
 
 " set NERDTree toggle keybind
