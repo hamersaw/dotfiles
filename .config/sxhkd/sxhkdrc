@@ -123,15 +123,15 @@ super + {Left,Down,Up,Right}
 
 # manually added 2017.10.08
 XF86AudioRaiseVolume 
-    pactl set-sink-volume 0 +5%
+    pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +5%
     #amixer -q set Master 5%+
 
 XF86AudioLowerVolume
-    pactl set-sink-volume 0 -5%
+    pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -5%
     #amixer -q set Master 5%-
 
 XF86AudioMute
-    pactl set-sink-mute 0 toggle
+    pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
     #amixer -q set Master toggle
 
 XF86MonBrightnessDown
