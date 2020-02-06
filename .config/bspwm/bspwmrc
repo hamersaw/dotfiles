@@ -18,8 +18,3 @@ bspc config focused_border_color    "#1E90FF"
 #bspc config top_padding             20 # enable for status bar
 #i3status | dzen2 -fn "xft:Monospace:size=10" -bg "#222222" -ta r
 #i3status | dzen2 -ta r # enable for status bar
-
-# moved over from .xinitrc for use on ubuntu 20191221
-[ -d ~/Pictures/wallpapers ] && feh --bg-fill --randomize ~/Pictures/wallpapers
-compton &
-conky -c .config/conky/conky.conf -d
