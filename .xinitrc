@@ -4,11 +4,8 @@
 
 # start compton and conky
 #compton --opacity-rule '90:class_g = "URxvt" && !focused' &
-#conky -c .config/conky/conky.conf -d
-
-# start polybar
-command -v polybar &> /dev/null \
-    polybar core > /dev/null 2>&1 & disown
+compton &
+conky -c .config/conky/conky.conf -d
 
 # turn off beeps
 xset b off
