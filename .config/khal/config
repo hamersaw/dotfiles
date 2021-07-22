@@ -1,0 +1,38 @@
+[calendars]
+
+[[birthday]]
+path = /home/hamersaw/.local/share/khal/calendars/birthday
+type = calendar
+
+[[home]]
+path = /home/hamersaw/.local/share/khal/calendars/home
+type = calendar
+
+[[school]]
+path = /home/hamersaw/.local/share/khal/calendars/14049767-A507-4883-BE4F-CF45D68953CC
+type = calendar
+
+[[work]]
+path = /home/hamersaw/.local/share/khal/calendars/work
+type = calendar
+
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+[default]
+print_new = event
+highlight_event_days = true
+show_all_days = true
+timedelta = 7d
+
+[highlight_days]
+color = '#ffffff'
+method = fg
+
+[view]
+agenda_day_format = {bold}{date-long} {name}{reset}
+agenda_event_format = {calendar-color}  {cancelled}{start-end-time-style} {title}{reset}

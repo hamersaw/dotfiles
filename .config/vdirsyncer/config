@@ -1,0 +1,18 @@
+[general]
+status_path = "~/.local/share/vdirsyncer/status/"
+
+[pair icloud_to_khal]
+a = "khal"
+b = "icloud"
+collections = ["home", "work", "14049767-A507-4883-BE4F-CF45D68953CC"]
+
+[storage khal]
+type = "filesystem"
+path = "~/.local/share/khal/calendars"
+fileext = "ics"
+
+[storage icloud]
+type = "caldav"
+url = "https://caldav.icloud.com/"
+username.fetch = ["prompt", "icloud username"]
+password.fetch = ["prompt", "icloud app password"]
