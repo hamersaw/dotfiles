@@ -1,3 +1,5 @@
 [user]
 	name = Daniel Rammer
 	email = hamersaw@protonmail.com
+[init]
+	defaultBranch = main

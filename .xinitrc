@@ -4,7 +4,7 @@
 
 # start compton and conky
 #compton --opacity-rule '90:class_g = "URxvt" && !focused' &
-compton &
+#compton &
 conky -c .config/conky/conky.conf -d
 
 # turn off beeps

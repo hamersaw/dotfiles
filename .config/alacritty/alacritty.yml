@@ -174,39 +174,73 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (eighties dark - terminal.sexy)
+# Colors (mocha light / dark - terminal.sexy)
 colors:
   # Default colors
   primary:
+    # light
+    #background: '0xf5eeeb'
+    #foreground: '0x645240'
+
     # dark
-    background: '0x2d2d2d'
-    foreground: '0xd3d0c8'
+    background: '0x3b3228'
+    foreground: '0xd0c8c6'
+
+  # Normal colors
+  normal:
+    black:   '0x3b3228'
+    red:     '0xcb6077'
+    green:   '0xbeb55b'
+    yellow:  '0xf4bc87'
+    blue:    '0x8ab3b5'
+    magenta: '0xa89bb9'
+    cyan:    '0x7bbda4'
+    white:   '0xd0c8c6'
+
+  # Bright colors
+  bright:
+    black:   '0x7e705a'
+    red:     '0xcb6077'
+    green:   '0xbeb55b'
+    yellow:  '0xf4bc87'
+    blue:    '0x8ab3b5'
+    magenta: '0xa89bb9'
+    cyan:    '0x7bbda4'
+    white:   '0xf5eeeb'
+
+# Colors (eighties light / dark - terminal.sexy)
+#colors:
+  # Default colors
+  #primary:
+    # dark
+    #background: '0x2d2d2d'
+    #foreground: '0xd3d0c8'
 
     # light
     #background: '0xf2f0ec'
     #foreground: '0x515151'
 
   # Normal colors
-  normal:
-    black:   '0x2d2d2d'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xd3d0c8'
+  #normal:
+    #black:   '0x2d2d2d'
+    #red:     '0xf2777a'
+    #green:   '0x99cc99'
+    #yellow:  '0xffcc66'
+    #blue:    '0x6699cc'
+    #magenta: '0xcc99cc'
+    #cyan:    '0x66cccc'
+    #white:   '0xd3d0c8'
 
   # Bright colors
-  bright:
-    black:   '0x747369'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xf2f0ec'
+  #bright:
+    #black:   '0x747369'
+    #red:     '0xf2777a'
+    #green:   '0x99cc99'
+    #yellow:  '0xffcc66'
+    #blue:    '0x6699cc'
+    #magenta: '0xcc99cc'
+    #cyan:    '0x66cccc'
+    #white:   '0xf2f0ec'
 
 # Colors (Tomorrow Night)
 #colors:

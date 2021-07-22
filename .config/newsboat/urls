@@ -1,14 +1,14 @@
-https://drewdevault.com/blog/index.xml
-
 https://www.eff.org/rss/updates.xml
 https://www.cncf.io/feed
-https://blog.cloudflare.com/rss/
 https://blog.mozilla.org/feed 
+https://research.protocol.ai/index.xml
 http://opensource.googleblog.com/atom.xml
 
-https://reddit.com/r/linux/.rss
 https://www.phoronix.com/rss.php
+https://reddit.com/r/linux/.rss
+
 https://reddit.com/r/rust/.rss
+https://reddit.com/r/golang/.rss
 
 https://feeds.feedburner.com/PentestTools
 https://reddit.com/r/netsec/.rss
