@@ -22,6 +22,7 @@ dateformat = %Y-%m-%d
 longdateformat = %Y-%m-%d
 datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
+firstweekday = 6
 
 [default]
 print_new = event
@@ -30,7 +31,7 @@ show_all_days = true
 timedelta = 7d
 
 [highlight_days]
-color = '#ffffff'
+color = 'light green'
 method = fg
 
 [view]
