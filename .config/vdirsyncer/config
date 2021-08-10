@@ -1,18 +1,29 @@
 [general]
 status_path = "~/.local/share/vdirsyncer/status/"
 
-[pair icloud_to_khal]
-a = "khal"
-b = "icloud"
-collections = ["home", "work", "14049767-A507-4883-BE4F-CF45D68953CC"]
-
 [storage khal]
 type = "filesystem"
 path = "~/.local/share/khal/calendars"
-fileext = "ics"
+fileext = ".ics"
+
+[pair local_icloud]
+a = "khal"
+b = "icloud"
+collections = ["home", "14049767-A507-4883-BE4F-CF45D68953CC"]
 
 [storage icloud]
 type = "caldav"
 url = "https://caldav.icloud.com/"
 username.fetch = ["prompt", "icloud username"]
 password.fetch = ["prompt", "icloud app password"]
+
+[pair local_google]
+a = "khal"
+b = "google"
+collections = ["daniel@union.ai", "c_iap640sdb0ntt64niih6bv14ns@group.calendar.google.com"]
+
+[storage google]
+type = "google_calendar"
+token_file = "~/.local/share/khal/google_token"
+client_id.fetch = ["prompt", "google client id"]
+client_secret.fetch = ["prompt", "google secret"]
