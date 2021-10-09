@@ -2,16 +2,9 @@
 [ -d ~/pictures/wallpapers ] && command -v nitrogen &> /dev/null \
     nitrogen --set-zoom-fill --random ~/pictures/wallpapers
 
-# start compton and conky
-#compton --opacity-rule '90:class_g = "URxvt" && !focused' &
-#compton &
-conky -c .config/conky/conky.conf -d
-
-# turn off beeps
-xset b off
-
-# execute i3wm
-#exec i3
+# start start dunst (desktop notifications) and conky (desktop tray)
+command -v dunst &> /dev/null && dunst &
+command -v conky &> /dev/null && conky -c .config/conky/conky.conf -d
 
 # execute bspwm
 exec bspwm
