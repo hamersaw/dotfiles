@@ -1,14 +1,18 @@
-https://www.eff.org/rss/updates.xml
 https://www.cncf.io/feed
-https://blog.mozilla.org/feed 
-https://research.protocol.ai/index.xml
-http://opensource.googleblog.com/atom.xml
+
+https://appliedgo.net/index.xml
+https://blog.golang.org/feed.atom?format=xml
+https://reddit.com/r/golang/.rss
 
 https://www.phoronix.com/rss.php
 https://reddit.com/r/linux/.rss
 
 https://reddit.com/r/rust/.rss
-https://reddit.com/r/golang/.rss
+
+https://www.eff.org/rss/updates.xml
+https://blog.mozilla.org/feed
+https://research.protocol.ai/blog/index.xml
+http://opensource.googleblog.com/atom.xml
 
 https://feeds.feedburner.com/PentestTools
 https://reddit.com/r/netsec/.rss
