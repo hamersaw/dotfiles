@@ -14,6 +14,12 @@ map <C-n> :NERDTreeToggle<CR>
 set clipboard+=unnamedplus
 
 " make tabs 4 spaces
-set expandtab
+"set expandtab
+"set tabstop=4
+"set shiftwidth=4
+
+" make tab width 4
+set noexpandtab
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
