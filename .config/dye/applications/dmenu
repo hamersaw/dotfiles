@@ -1,0 +1,8 @@
+#!/bin/bash
+
+config=".config/sxhkd/sxhkdrc"
+
+declare -A updates
+updates["-nb \"#DYECOLOR\""]="background"
+updates["-nf \"#DYECOLOR\""]="foreground"
+updates["-sb \"#DYECOLOR\""]="normal_blue"

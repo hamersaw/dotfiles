@@ -1,0 +1,16 @@
+#!/bin/bash
+
+config=".config/conky/conky.conf"
+
+declare -A updates
+updates["own_window_colour = 'DYECOLOR'"]="background"
+updates["default_color = 'DYECOLOR'"]="foreground"
+
+updates["color0 = 'DYECOLOR'"]="normal_black"
+updates["color1 = 'DYECOLOR'"]="normal_red"
+updates["color2 = 'DYECOLOR'"]="normal_green"
+updates["color3 = 'DYECOLOR'"]="normal_yellow"
+updates["color4 = 'DYECOLOR'"]="normal_blue"
+updates["color5 = 'DYECOLOR'"]="normal_magenta"
+updates["color6 = 'DYECOLOR'"]="normal_magenta"
+updates["color7 = 'DYECOLOR'"]="normal_white"

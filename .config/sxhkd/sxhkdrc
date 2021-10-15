@@ -9,7 +9,7 @@ super + Return
 
 # program launcher
 super + space
-	dmenu_run -fn "DejaVu Sans Mono:size=11" -nb "#3b3228" -nf "#d0c8c6" -sb "#8ab3b5" # mocha dark colors
+	dmenu_run -fn "DejaVu Sans Mono:size=11" -nb "#f5eeeb" -nf "#645240" -sb "#8ab3b5" # mocha dark colors
 	#rofi -show run
 
 # make sxhkd reload its configuration files:

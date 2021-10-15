@@ -1,0 +1,22 @@
+declare -A colors
+
+colors[background]="f5eeeb"
+colors[foreground]="645240"
+
+colors[normal_black]="3b3228"
+colors[normal_red]="cb6077"
+colors[normal_green]="beb55b"
+colors[normal_yellow]="f4bc87"
+colors[normal_blue]="8ab3b5"
+colors[normal_magenta]="a89bb9"
+colors[normal_cyan]="7bbda4"
+colors[normal_white]="d0c8c6"
+
+colors[bright_black]="7e705a"
+colors[bright_red]="cb6077"
+colors[bright_green]="beb55b"
+colors[bright_yellow]="f4bc87"
+colors[bright_blue]="8ab3b5"
+colors[bright_magenta]="a89bb9"
+colors[bright_cyan]="7bbda4"
+colors[bright_white]="f5eeeb"

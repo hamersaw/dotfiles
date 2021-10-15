@@ -12,10 +12,9 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 # manually added 20171008
-bspc config window_gap              6
-bspc config focused_border_color    "#8AB3B5"
-#bspc config focused_border_color    "#6699cc"
-#bspc config focused_border_color    "#1E90FF"
+bspc config window_gap 6
+bspc config focused_border_color "#8ab3b5"
+bspc config normal_border_color "#645240"
 
 #bspc config top_padding             20 # enable for status bar
 #i3status | dzen2 -fn "xft:Monospace:size=10" -bg "#222222" -ta r

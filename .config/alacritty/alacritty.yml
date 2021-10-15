@@ -179,34 +179,34 @@ colors:
   # Default colors
   primary:
     # light
-    #background: '0xf5eeeb'
-    #foreground: '0x645240'
+    background: '0xf5eeeb' # dye enable
+    foreground: '0x645240' # dye enable
 
     # dark
-    background: '0x3b3228'
-    foreground: '0xd0c8c6'
+    #background: '0x3b3228'
+    #foreground: '0xd0c8c6'
 
   # Normal colors
   normal:
-    black:   '0x3b3228'
-    red:     '0xcb6077'
-    green:   '0xbeb55b'
-    yellow:  '0xf4bc87'
-    blue:    '0x8ab3b5'
-    magenta: '0xa89bb9'
-    cyan:    '0x7bbda4'
-    white:   '0xd0c8c6'
+    black:   '0x3b3228' # dye normal
+    red:     '0xcb6077' # dye normal
+    green:   '0xbeb55b' # dye normal
+    yellow:  '0xf4bc87' # dye normal
+    blue:    '0x8ab3b5' # dye normal
+    magenta: '0xa89bb9' # dye normal
+    cyan:    '0x7bbda4' # dye normal
+    white:   '0xd0c8c6' # dye normal
 
   # Bright colors
   bright:
-    black:   '0x7e705a'
-    red:     '0xcb6077'
-    green:   '0xbeb55b'
-    yellow:  '0xf4bc87'
-    blue:    '0x8ab3b5'
-    magenta: '0xa89bb9'
-    cyan:    '0x7bbda4'
-    white:   '0xf5eeeb'
+    black:   '0x7e705a' # dye bright
+    red:     '0xcb6077' # dye bright
+    green:   '0xbeb55b' # dye bright
+    yellow:  '0xf4bc87' # dye bright
+    blue:    '0x8ab3b5' # dye bright
+    magenta: '0xa89bb9' # dye bright
+    cyan:    '0x7bbda4' # dye bright
+    white:   '0xf5eeeb' # dye bright
 
 # Colors (eighties light / dark - terminal.sexy)
 #colors:

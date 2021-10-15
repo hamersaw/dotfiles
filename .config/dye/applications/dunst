@@ -1,0 +1,18 @@
+#!/bin/bash
+
+config=".config/dunst/dunstrc"
+
+declare -A updates
+updates["frame_color = \"#DYECOLOR\" # dye enable"]="normal_blue"
+
+updates["background = \"#DYECOLOR\" # dye low"]="normal_blue"
+updates["foreground = \"#DYECOLOR\" # dye low"]="foreground"
+updates["frame_color = \"#DYECOLOR\" # dye low"]="normal_green"
+
+updates["background = \"#DYECOLOR\" # dye normal"]="normal_blue"
+updates["foreground = \"#DYECOLOR\" # dye normal"]="foreground"
+updates["frame_color = \"#DYECOLOR\" # dye normal"]="normal_yellow"
+
+updates["background = \"#DYECOLOR\" # dye urgent"]="normal_blue"
+updates["foreground = \"#DYECOLOR\" # dye urgent"]="foreground"
+updates["frame_color = \"#DYECOLOR\" # dye urgent"]="normal_red"
