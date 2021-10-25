@@ -178,13 +178,8 @@ font:
 colors:
   # Default colors
   primary:
-    # light
     background: '0xf5eeeb' # dye enable
     foreground: '0x645240' # dye enable
-
-    # dark
-    #background: '0x3b3228'
-    #foreground: '0xd0c8c6'
 
   # Normal colors
   normal:
@@ -207,40 +202,6 @@ colors:
     magenta: '0xa89bb9' # dye bright
     cyan:    '0x7bbda4' # dye bright
     white:   '0xf5eeeb' # dye bright
-
-# Colors (eighties light / dark - terminal.sexy)
-#colors:
-  # Default colors
-  #primary:
-    # dark
-    #background: '0x2d2d2d'
-    #foreground: '0xd3d0c8'
-
-    # light
-    #background: '0xf2f0ec'
-    #foreground: '0x515151'
-
-  # Normal colors
-  #normal:
-    #black:   '0x2d2d2d'
-    #red:     '0xf2777a'
-    #green:   '0x99cc99'
-    #yellow:  '0xffcc66'
-    #blue:    '0x6699cc'
-    #magenta: '0xcc99cc'
-    #cyan:    '0x66cccc'
-    #white:   '0xd3d0c8'
-
-  # Bright colors
-  #bright:
-    #black:   '0x747369'
-    #red:     '0xf2777a'
-    #green:   '0x99cc99'
-    #yellow:  '0xffcc66'
-    #blue:    '0x6699cc'
-    #magenta: '0xcc99cc'
-    #cyan:    '0x66cccc'
-    #white:   '0xf2f0ec'
 
 # Colors (Tomorrow Night)
 #colors:
