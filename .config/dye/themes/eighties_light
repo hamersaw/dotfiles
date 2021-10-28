@@ -1,0 +1,22 @@
+declare -A colors
+
+colors[background]="f2f0ec"
+colors[foreground]="515151"
+
+colors[normal_black]="2d2d2d"
+colors[normal_red]="f2777a"
+colors[normal_green]="99cc99"
+colors[normal_yellow]="ffcc66"
+colors[normal_blue]="6699cc"
+colors[normal_magenta]="cc99cc"
+colors[normal_cyan]="66cccc"
+colors[normal_white]="d3d0c8"
+
+colors[bright_black]="747369"
+colors[bright_red]="f2777a"
+colors[bright_green]="99cc99"
+colors[bright_yellow]="ffcc66"
+colors[bright_blue]="6699cc"
+colors[bright_magenta]="cc99cc"
+colors[bright_cyan]="66cccc"
+colors[bright_white]="f2f0ec"
