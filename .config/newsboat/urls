@@ -11,7 +11,9 @@ https://reddit.com/r/rust/.rss
 
 https://www.eff.org/rss/updates.xml
 https://blog.mozilla.org/feed
-https://research.protocol.ai/blog/index.xml
+https://protocol.ai/rss.xml
+https://research.protocol.ai/index.xml
+https://www.hashicorp.com/blog/feed.xml
 http://opensource.googleblog.com/atom.xml
 
 https://feeds.feedburner.com/PentestTools

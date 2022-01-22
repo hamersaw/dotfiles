@@ -9,7 +9,7 @@ fileext = ".ics"
 [pair local_icloud]
 a = "khal"
 b = "icloud"
-collections = ["home", "14049767-A507-4883-BE4F-CF45D68953CC"]
+collections = ["home"]
 
 [storage icloud]
 type = "caldav"

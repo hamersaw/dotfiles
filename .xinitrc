@@ -2,7 +2,7 @@
 [ -d ~/pictures/wallpapers ] && command -v nitrogen &> /dev/null \
     nitrogen --set-zoom-fill --random ~/pictures/wallpapers
 
-# start start dunst (desktop notifications) and conky (desktop tray)
+# start dunst (desktop notifications) and conky (desktop tray)
 command -v dunst &> /dev/null && dunst &
 command -v conky &> /dev/null && conky -c .config/conky/conky.conf -d
 
