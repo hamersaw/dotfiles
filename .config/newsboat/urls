@@ -1,13 +1,10 @@
 https://www.cncf.io/feed
 
-https://appliedgo.net/index.xml
-https://blog.golang.org/feed.atom?format=xml
 https://reddit.com/r/golang/.rss
+https://reddit.com/r/rust/.rss
 
 https://www.phoronix.com/rss.php
 https://reddit.com/r/linux/.rss
-
-https://reddit.com/r/rust/.rss
 
 https://www.eff.org/rss/updates.xml
 https://blog.mozilla.org/feed
