@@ -6,12 +6,10 @@ https://reddit.com/r/rust/.rss
 https://www.phoronix.com/rss.php
 https://reddit.com/r/linux/.rss
 
-https://www.eff.org/rss/updates.xml
-https://blog.mozilla.org/feed
-https://protocol.ai/rss.xml
-https://research.protocol.ai/index.xml
+https://aws.amazon.com/blogs/aws/feed/
+https://cloudblog.withgoogle.com/rss/
 https://www.hashicorp.com/blog/feed.xml
-http://opensource.googleblog.com/atom.xml
 
-https://feeds.feedburner.com/PentestTools
-https://reddit.com/r/netsec/.rss
+https://blog.mozilla.org/feed
+https://www.eff.org/rss/updates.xml
+https://www.internetsociety.org/feed/
