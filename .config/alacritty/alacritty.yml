@@ -99,8 +99,8 @@ window:
 # Font configuration
 font:
   normal:
-    family: DejaVu Sans Mono
-  size: 7.5
+    family: Inconsolata
+  size: 8.5
 
 #font:
   # Normal (roman) font face

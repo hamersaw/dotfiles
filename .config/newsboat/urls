@@ -1,15 +1,33 @@
-https://www.cncf.io/feed
-
+# programming languages
 https://reddit.com/r/golang/.rss
 https://reddit.com/r/rust/.rss
 
+# linux blogs
 https://www.phoronix.com/rss.php
 https://reddit.com/r/linux/.rss
 
+# cloud blogs
+https://www.cncf.io/feed
 https://aws.amazon.com/blogs/aws/feed/
+https://aws.amazon.com/blogs/architecture/feed/
+https://aws.amazon.com/blogs/storage/feed/
+https://aws.amazon.com/blogs/big-data/feed/
+https://aws.amazon.com/blogs/database/feed/
 https://cloudblog.withgoogle.com/rss/
-https://www.hashicorp.com/blog/feed.xml
 
-https://blog.mozilla.org/feed
-https://www.eff.org/rss/updates.xml
-https://www.internetsociety.org/feed/
+# cloud / analytics companites / platforms
+https://kubernetes.io/feed.xml
+https://databricks.com/feed
+
+# research articles
+https://dl.acm.org/rss/latestIssuesProceedings
+https://csdl-api.computer.org/api/rss/periodicals/trans/bd/rss.xml
+https://csdl-api.computer.org/api/rss/periodicals/trans/cc/rss.xml
+https://csdl-api.computer.org/api/rss/periodicals/trans/tk/rss.xml
+https://csdl-api.computer.org/api/rss/periodicals/trans/td/rss.xml
+
+#https://blog.mozilla.org/feed
+#https://www.eff.org/rss/updates.xml
+#https://www.internetsociety.org/feed/
+#https://www.hashicorp.com/blog/feed.xml
+#https://feeds.feedburner.com/HighScalability
