@@ -4,62 +4,48 @@
 " configure plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'github/copilot.vim'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/vim-lsp'
+Plug 'neovim/nvim-lspconfig'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 call plug#end()
 
-" tab completion
-inoremap <expr> <S-Tab>   pumvisible() ? "\<C-n>" : "\<S-Tab>"
-"inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
-
-" disable popup by default - but open on tab
-let g:asyncomplete_auto_popup = 0
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <S-TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<S-TAB>" :
-  \ asyncomplete#force_refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 "
-" lsp server configuration
+" configure lsp
 "
-function! s:on_lsp_buffer_enabled() abort
-    setlocal signcolumn=no
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-    "nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-    "nmap <buffer> ]g <plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
 
-    let g:lsp_diagnostics_enabled = 0
-    let g:lsp_diagnostics_highlights_enabled = 0
-    let g:lsp_diagnostics_virtual_text_enabled = 0
+lua << EOF
+require("mason").setup()
+require("mason-lspconfig").setup()
 
-    let g:lsp_document_highlight_enabled = 0
-    let g:lsp_document_code_action_signs_enabled = 0
+local on_attach = function(_, bufnr)
+  -- mappings
+  local opts = { buffer = bufnr, noremap = true, silent = true }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+  vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 
-    let g:lsp_fold_enabled = 0
-endfunction
+  -- disable diagnostics
+  vim.diagnostic.config {
+    virtual_text = false,
+    signs = false,
+    underline = false,
+  }
+end
 
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
+require("mason-lspconfig").setup_handlers {
+  function (server_name)
+    require("lspconfig")[server_name].setup {
+      on_attach = on_attach,
+    }
+  end,
+}
+EOF
 
 "
 " NERDTree configuration
