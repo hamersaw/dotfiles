@@ -4,6 +4,10 @@
 " configure plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'github/copilot.vim'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'neovim/nvim-lspconfig'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'williamboman/mason.nvim'
@@ -25,9 +29,9 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+  --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+  --vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 
   -- disable diagnostics
@@ -38,9 +42,40 @@ local on_attach = function(_, bufnr)
   }
 end
 
+local cmp = require'cmp'
+cmp.setup({
+  completion = {
+    autocomplete = false,
+  },
+  preselect = cmp.PreselectMode.None,
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 require("mason-lspconfig").setup_handlers {
   function (server_name)
     require("lspconfig")[server_name].setup {
+      capabilities = capabilities,
       on_attach = on_attach,
     }
   end,
