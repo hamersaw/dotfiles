@@ -1,24 +1,23 @@
-" to install vim-plug: 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-" reload vimrc and :PlugInstall
+-- to install vim-plug: 'curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+-- reload vimrc and :PlugInstall
 
-" configure plugins
-call plug#begin('~/.config/nvim/plugged')
+-- configure plugins
+local Plug = vim.fn['plug#']
+vim.call('plug#begin', '~/.config/nvim/plugged')
 Plug 'github/copilot.vim'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'neovim/nvim-lspconfig'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
-call plug#end()
+vim.call('plug#end')
 
-"
-" configure lsp
-"
+--
+-- configure lsp
+--
 
-lua << EOF
 require("mason").setup()
 require("mason-lspconfig").setup()
 
@@ -80,31 +79,44 @@ require("mason-lspconfig").setup_handlers {
     }
   end,
 }
-EOF
 
-"
-" NERDTree configuration
-" "
-map <C-t> :NERDTreeToggle<CR>
-" Start NERDTree on vim start
-"autocmd VimEnter * NERDTree
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" Start NERDTree when Vim is started without file arguments.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | execute 'NERDTree' | endif
+--
+-- netrw configuration
+--
 
-" 
-" miscellaneous configuration
-"
+vim.keymap.set('n', '<C-n>', ':Lexplore<CR>', { noremap = true, silent = true })
+vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+vim.g.netrw_browse_split = 4
+vim.g.altv = 1
+vim.g.netrw_winsize = 15
 
-" always use system clipboard
-set clipboard+=unnamedplus
+-- Exit Vim if netrw is the only window remaining in the only tab.
+--autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+-- Start netrw when Vim is started without file arguments.
+vim.api.nvim_create_autocmd("StdinReadPre", {
+    pattern = "*",
+    command = "let s:std_in=1"
+})
+vim.api.nvim_create_autocmd("VimEnter", {
+    pattern = "*",
+    command = "if argc() == 0 && !exists('s:std_in') | execute 'Lexplore' | endif"
+})
 
-" make tabs 4 spaces by default
-set expandtab
-set tabstop=4
-set shiftwidth=4
+-- 
+-- miscellaneous configuration
+--
 
-" make tab width 4 for go files
-autocmd FileType go setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+-- always use system clipboard
+vim.opt.clipboard:append { 'unnamedplus' }
+
+-- make tabs 4 spaces by default
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+
+-- make tab width 4 for go files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "go",
+    command = "setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4"
+})
