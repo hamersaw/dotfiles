@@ -10,6 +10,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'neovim/nvim-lspconfig'
+Plug 'preservim/nerdtree'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 vim.call('plug#end')
@@ -81,29 +82,52 @@ require("mason-lspconfig").setup_handlers {
 }
 
 --
--- netrw configuration
+-- nerdtree configuration
 --
 
-vim.keymap.set('n', '<C-n>', ':Lexplore<CR>', { noremap = true, silent = true })
-vim.g.netrw_liststyle = 3
-vim.g.netrw_banner = 0
-vim.g.netrw_browse_split = 4
-vim.g.altv = 1
-vim.g.netrw_winsize = 15
+vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>', { noremap = true, silent = true })
 
--- Exit Vim if netrw is the only window remaining in the only tab.
---autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
--- Start netrw when Vim is started without file arguments.
+--" Exit Vim if NERDTree is the only window remaining in the only tab.
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*",
+    command = "if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif"
+})
+
+--" Start NERDTree when Vim is started without file arguments.
 vim.api.nvim_create_autocmd("StdinReadPre", {
     pattern = "*",
     command = "let s:std_in=1"
 })
 vim.api.nvim_create_autocmd("VimEnter", {
     pattern = "*",
-    command = "if argc() == 0 && !exists('s:std_in') | execute 'Lexplore' | endif"
+    command = "if argc() == 0 && !exists('s:std_in') | execute 'NERDTree' | endif"
 })
 
--- 
+
+--
+-- netrw configuration
+--
+
+--vim.keymap.set('n', '<C-n>', ':Lexplore<CR>', { noremap = true, silent = true })
+--vim.g.netrw_liststyle = 3
+--vim.g.netrw_banner = 0
+--vim.g.netrw_browse_split = 4
+--vim.g.altv = 1
+--vim.g.netrw_winsize = 15
+
+-- Exit Vim if netrw is the only window remaining in the only tab.
+--autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+-- Start netrw when Vim is started without file arguments.
+--vim.api.nvim_create_autocmd("StdinReadPre", {
+--    pattern = "*",
+--    command = "let s:std_in=1"
+--})
+--vim.api.nvim_create_autocmd("VimEnter", {
+--    pattern = "*",
+--    command = "if argc() == 0 && !exists('s:std_in') | execute 'Lexplore' | endif"
+--})
+
+--
 -- miscellaneous configuration
 --
 
