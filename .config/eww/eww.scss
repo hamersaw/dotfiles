@@ -1,0 +1,105 @@
+// global
+* {
+  all: unset;
+}
+
+// variable colors
+//$background: #3b3228;
+//$foreground: #d0c8c6;
+$background: #f5eeeb;
+$foreground: #645240;
+
+$black: #3b3228;
+//$gray: #565F89;
+$red: #cb6077;
+$green: #beb55b;
+$yellow: #f4bc87;
+$blue: #8ab3b5;
+$magenta: #a89bb9;
+$cyan: #7bbda4;
+$white: #d0c8c6;
+
+.bar{
+  color: $foreground;
+  background-color: $background;
+  padding: .3rem;
+  //border: 1px solid $foreground;
+  //border-radius: 10px;
+}
+
+.top{
+  padding-top: 10px;
+}
+.workspaces{
+  font-size: 1.4em;
+}
+.focused{
+  color: $blue;
+}
+.unfocused{
+  color: $foreground;
+}
+
+.time {
+  font-weight: bold;
+  font-size: 1.6em;
+  background-color: $background;
+  color: $foreground;
+}
+
+.bottom{
+  font-size: 2.2em;
+  padding-bottom: 10px;
+}
+.volume-icon-yes{
+  color: $red
+}
+.volume-icon-no{
+  color: $green
+}
+.volumetext{
+  font-size: 0.5em;
+}
+.volumebar-yes trough highlight {
+  background-color: $red;
+  border-radius: 5px;
+}
+.volumebar-no trough highlight {
+  background-color: $green;
+  border-radius: 5px;
+}
+.backlight-icon{
+  color: $yellow
+}
+.backlighttext{
+  font-size: 0.5em;
+}
+.backlightbar trough highlight {
+  background-color: $yellow;
+  border-radius: 5px;
+}
+scale trough {
+  all: unset;
+  background-color: $background;
+  border-radius: 5px;
+  min-height: 80px;
+  min-width: 15px;
+}
+.battery-icon{
+  color: $blue
+}
+.batterytext{
+  font-size: 0.5em;
+}
+.powermenu-slider{
+  padding-bottom: 5px;
+}
+.button-reboot{
+  color: $magenta;
+}
+.button-lock{
+  color: $yellow;
+}
+.button-shutdown{
+  color: $red;
+}
