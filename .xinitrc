@@ -6,7 +6,8 @@ xset b off
 
 # start dunst (desktop notifications) and conky (desktop tray)
 #command -v dunst &> /dev/null && dunst &
-command -v conky &> /dev/null && conky -c .config/conky/conky.conf -d
+#command -v conky &> /dev/null && conky -c .config/conky/conky.conf -d
+command -v eww &> /dev/null && eww daemon && eww open bar
 
 # execute bspwm
 exec bspwm

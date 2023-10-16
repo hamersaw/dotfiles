@@ -4,19 +4,15 @@
 }
 
 // variable colors
-//$background: #3b3228;
-//$foreground: #d0c8c6;
 $background: #f5eeeb;
 $foreground: #645240;
 
 $black: #3b3228;
-//$gray: #565F89;
 $red: #cb6077;
 $green: #beb55b;
 $yellow: #f4bc87;
 $blue: #8ab3b5;
 $magenta: #a89bb9;
-$cyan: #7bbda4;
 $white: #d0c8c6;
 
 .bar{
@@ -25,6 +21,7 @@ $white: #d0c8c6;
   padding: .3rem;
   //border: 1px solid $foreground;
   //border-radius: 10px;
+  font-family: "Font Awesome";
 }
 
 .top{
@@ -52,10 +49,10 @@ $white: #d0c8c6;
   padding-bottom: 10px;
 }
 .volume-icon-yes{
-  color: $red
+  color: $red;
 }
 .volume-icon-no{
-  color: $green
+  color: $green;
 }
 .volumetext{
   font-size: 0.5em;
@@ -69,7 +66,8 @@ $white: #d0c8c6;
   border-radius: 5px;
 }
 .backlight-icon{
-  color: $yellow
+  color: $yellow;
+  font-size: 0.85em;
 }
 .backlighttext{
   font-size: 0.5em;
@@ -85,8 +83,17 @@ scale trough {
   min-height: 80px;
   min-width: 15px;
 }
-.battery-icon{
-  color: $blue
+.battery-icon-good{
+  color: $green;
+  font-size: 0.7em;
+}
+.battery-icon-ok{
+  color: $yellow;
+  font-size: 0.7em;
+}
+.battery-icon-bad{
+  color: $red;
+  font-size: 0.7em;
 }
 .batterytext{
   font-size: 0.5em;
@@ -101,5 +108,5 @@ scale trough {
   color: $yellow;
 }
 .button-shutdown{
-  color: $red;
+  color: $blue;
 }

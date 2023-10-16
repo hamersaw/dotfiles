@@ -1,0 +1,15 @@
+#!/bin/bash
+
+config=".config/eww/eww.scss"
+
+declare -A updates
+updates["\$background: #DYECOLOR;"]="background"
+updates["\$foreground: #DYECOLOR;"]="foreground"
+
+updates["\$black: #DYECOLOR"]="normal_black"
+updates["\$red: #DYECOLOR"]="normal_red"
+updates["\$green: #DYECOLOR"]="normal_green"
+updates["\$yellow: #DYECOLOR"]="normal_yellow"
+updates["\$blue: #DYECOLOR"]="normal_blue"
+updates["\$magenta: #DYECOLOR"]="normal_magenta"
+updates["\$white: #DYECOLOR"]="normal_white"

@@ -55,6 +55,7 @@
                 :valign "start"
                 :spacing 15 
                 :class "workspaces"
+(workspace0)
 (workspace1)
 (workspace2)
 (workspace3)
@@ -63,59 +64,49 @@
 (workspace6)
 (workspace7)
 (workspace8)
-(workspace9)
-(workspace10)))
+(workspace9)))
 
+(defwidget workspace0 []
+  	(button		:class {"${workspace-focused}" == "0" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '0'"
+                {arraylength(search("${workspace-occupied}", "0")) != 0 ? "" : ""}))
 (defwidget workspace1 []
-  	(button		:class {"${workspace-focused}" == "I" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'I'"
-                {"${workspace1-occupied}" != "" ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "1" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '1'"
+                {arraylength(search("${workspace-occupied}", "1")) != 0 ? "" : ""}))
 (defwidget workspace2 []
-  	(button		:class {"${workspace-focused}" == "II" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'II'"
-                {"${workspace2-occupied}" != "" ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "2" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '2'"
+                {arraylength(search("${workspace-occupied}", "2")) != 0 ? "" : ""}))
 (defwidget workspace3 []
-  	(button		:class {"${workspace-focused}" == "III" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'III'"
-                {"${workspace3-occupied}" != "" ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "3" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '3'"
+                {arraylength(search("${workspace-occupied}", "3")) != 0 ? "" : ""}))
 (defwidget workspace4 []
-  	(button		:class {"${workspace-focused}" == "IV" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'IV'"
-                {"${workspace4-occupied}" != "" ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "4" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '4'"
+                {arraylength(search("${workspace-occupied}", "4")) != 0 ? "" : ""}))
 (defwidget workspace5 []
-  	(button		:class {"${workspace-focused}" == "V" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'V'"
-                {"${workspace5-occupied}" != "" ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "5" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '5'"
+                {arraylength(search("${workspace-occupied}", "5")) != 0 ? "" : ""}))
 (defwidget workspace6 []
-  	(button		:class {"${workspace-focused}" == "VI" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'VI'"
-                {"${workspace6-occupied}" != "" ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "6" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '6'"
+                {arraylength(search("${workspace-occupied}", "6")) != 0 ? "" : ""}))
 (defwidget workspace7 []
-  	(button		:class {"${workspace-focused}" == "VII" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'VII'"
-                {"${workspace7-occupied}" != "" ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "7" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '7'"
+                {arraylength(search("${workspace-occupied}", "7")) != 0 ? "" : ""}))
 (defwidget workspace8 []
-  	(button		:class {"${workspace-focused}" == "VIII" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'VIII'"
-                {"${workspace8-occupied}" != "" ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "8" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '8'"
+                {arraylength(search("${workspace-occupied}", "8")) != 0 ? "" : ""}))
 (defwidget workspace9 []
-  	(button		:class {"${workspace-focused}" == "IX" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'IX'"
-                {"${workspace9-occupied}" != "" ? "" : ""}))
-(defwidget workspace10 []
-  	(button		:class {"${workspace-focused}" == "X" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f 'X'"
-                {"${workspace10-occupied}" != "" ? "" : ""}))
-(defpoll workspace1-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^I$'")
-(defpoll workspace2-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^II$'")
-(defpoll workspace3-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^III$'")
-(defpoll workspace4-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^IV$'")
-(defpoll workspace5-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^V$'")
-(defpoll workspace6-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^VI$'")
-(defpoll workspace7-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^VII$'")
-(defpoll workspace8-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^VIII$'")
-(defpoll workspace9-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^IX$'")
-(defpoll workspace10-occupied :interval "5s" "bspc query -D -d .occupied --names | grep '^X$'")
+  	(button		:class {"${workspace-focused}" == "9" ? "focused" : "unfocused"}
+				:onclick "bspc desktop -f '9'"
+                {arraylength(search("${workspace-occupied}", "9")) != 0 ? "" : ""}))
+(defpoll workspace-occupied :interval "5s" "bspc query -D -d .occupied --names | xargs echo")
 (defpoll workspace-focused :interval "5s" "bspc query -D -d focused --names")
 
 ;; volume widget
@@ -167,7 +158,7 @@
                         (revealer :transition "slideup"
                                         :reveal backlight
                                         (label :class "backlighttext" :text "${current-backlight}%"))
-                        (label :class "backlight-icon" :text ""))))
+                        (label :class "backlight-icon" :text ""))))
 (defpoll current-backlight :interval "5s" "printf '%.0f' $(light -G)")
 (defvar backlight false)
 
@@ -193,11 +184,15 @@
                         (revealer :transition "slideup"
                                         :reveal battery
                                         (label :class "batterytext" :text "${EWW_BATTERY.BAT0.capacity}%"))
-                        (label :class "battery-icon" :text
-        {EWW_BATTERY.BAT0.capacity == 100 ? "F" :
-            EWW_BATTERY.BAT0.capacity > 75 ? "Q" :
-                EWW_BATTERY.BAT0.capacity > 50 ? "H" :
-                    EWW_BATTERY.BAT0.capacity > 25 ? "Q" : "E"}))))
+                        (label 
+                            :class 
+                            {EWW_BATTERY.BAT0.capacity > 80 ? "battery-icon-good" :
+                                EWW_BATTERY.BAT0.capacity > 50 ? "battery-icon-ok" : "battery-icon-bad"}
+                            :text
+                            {EWW_BATTERY.BAT0.capacity == 100 ? "" :
+                                EWW_BATTERY.BAT0.capacity > 75 ? "" :
+                                    EWW_BATTERY.BAT0.capacity > 50 ? "" :
+                                        EWW_BATTERY.BAT0.capacity > 25 ? "" : ""}))))
 (defvar battery false)
 
 ;; power widget

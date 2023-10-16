@@ -4,4 +4,4 @@ config=".config/bspwm/bspwmrc"
 
 declare -A updates
 updates["focused_border_color \"#DYECOLOR\""]="normal_blue"
-updates["normal_border_color \"#DYECOLOR\""]="foreground"
+updates["normal_border_color \"#DYECOLOR\""]="background"
