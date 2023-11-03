@@ -4,6 +4,7 @@
 -- configure plugins
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/plugged')
+Plug 'almo7aya/openingh.nvim'
 Plug 'github/copilot.vim'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -126,6 +127,13 @@ vim.api.nvim_create_autocmd("VimEnter", {
 --    pattern = "*",
 --    command = "if argc() == 0 && !exists('s:std_in') | execute 'Lexplore' | endif"
 --})
+
+--
+-- openingh configuration
+--
+
+vim.api.nvim_set_keymap("n", "gf", ":OpenInGHFile <CR>", { silent = true, noremap = true })
+vim.api.nvim_set_keymap("v", "gf", ":OpenInGHFileLines <CR>", { silent = true, noremap = true })
 
 --
 -- miscellaneous configuration
