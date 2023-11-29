@@ -12,12 +12,20 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'neovim/nvim-lspconfig'
 Plug 'preservim/nerdtree'
+Plug 'rhysd/git-messenger.vim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 vim.call('plug#end')
 
 --
--- configure lsp
+-- git-messenger configuration
+--
+
+vim.g.git_messenger_no_default_mappings = true
+vim.keymap.set('n', 'gm', ':GitMessenger<CR>', { noremap = true, silent = true })
+
+--
+-- lsp configuration
 --
 
 require("mason").setup()
@@ -28,7 +36,7 @@ local on_attach = function(_, bufnr)
   local opts = { buffer = bufnr, noremap = true, silent = true }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+  --vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
   --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
