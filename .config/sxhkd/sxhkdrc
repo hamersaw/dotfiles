@@ -149,3 +149,9 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
     light -A 5
     #xbacklight -inc 5
+
+super + shift + h
+	hakmenu -fn "Inconsolata:size=14" -nb "#f5eeeb" -nf "#645240" -sb "#8ab3b5" # mocha dark colors
+
+super + shift + p
+	veilmenu -fn "Inconsolata:size=14" -nb "#f5eeeb" -nf "#645240" -sb "#8ab3b5" # mocha dark colors

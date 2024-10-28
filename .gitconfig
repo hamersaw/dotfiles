@@ -3,3 +3,5 @@
 	email = hamersaw@protonmail.com
 [init]
 	defaultBranch = main
+[credential]
+	helper = cache

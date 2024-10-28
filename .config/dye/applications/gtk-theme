@@ -1,0 +1,6 @@
+#!/bin/bash
+
+config=".config/gtk-3.0/settings.ini"
+
+declare -A updates
+updates["gtk-application-prefer-dark-theme=DYECOLOR"]="dark_theme"

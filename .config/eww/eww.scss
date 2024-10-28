@@ -83,6 +83,9 @@ scale trough {
   min-height: 80px;
   min-width: 15px;
 }
+.batterymenu-slider{
+  padding-bottom: 5px;
+}
 .battery-icon-good{
   color: $green;
   font-size: 0.7em;
@@ -98,9 +101,9 @@ scale trough {
 .batterytext{
   font-size: 0.5em;
 }
-.powermenu-slider{
-  padding-bottom: 5px;
-}
+//.powermenu-slider{
+//  padding-bottom: 5px;
+//}
 .button-reboot{
   color: $magenta;
 }

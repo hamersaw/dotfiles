@@ -1,0 +1,4 @@
+- wifi widget
+- microphone widget
+- expand calendar on time hover
+- setup dye color changing

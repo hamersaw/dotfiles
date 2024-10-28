@@ -1,4 +1,5 @@
 xset b off
+dbus-update-activation-environment --systemd DISPLAY
 
 # if wallpapers directory exits -> set a random wallpaper
 [ -d ~/Pictures/wallpapers ] && command -v nitrogen &> /dev/null \

@@ -20,3 +20,5 @@ colors[bright_blue]="6699cc"
 colors[bright_magenta]="cc99cc"
 colors[bright_cyan]="66cccc"
 colors[bright_white]="f2f0ec"
+
+colors[dark_theme]="1"

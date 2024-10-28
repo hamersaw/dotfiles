@@ -45,8 +45,8 @@
                 :class "bottom"
 (volume)
 (backlight)
-(battery)
-(power)))
+(battery)))
+;; (power)))
 
 ;; workspaces widget
 (defwidget workspaces []
@@ -171,7 +171,7 @@
                         :class "time-hour" hour)
         (button :onclick "scripts/popup calendar"
                         :class "time-minute" minute)))
-(defpoll hour   :interval "5s"  "date '+%H'")
+(defpoll hour   :interval "5s"  "date '+%I'")
 (defpoll minute :interval "5s"  "date '+%M'")
 
 ;; battery widget
@@ -181,6 +181,7 @@
                         :tooltip "battery"
                         (box    :orientation "v"
                                         :space-evenly "false"
+                                        :class "batterymenu-slider"
                         (revealer :transition "slideup"
                                         :reveal battery
                                         (label :class "batterytext" :text "${EWW_BATTERY.BAT0.capacity}%"))
