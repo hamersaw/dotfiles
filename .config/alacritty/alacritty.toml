@@ -20,7 +20,7 @@ yellow = "0xf4bc87"  # dye normal
 
 [colors.primary]
 background = "0xf5eeeb" # dye enable
-foreground = "0x645240"  # dye enable
+foreground = "0x645240" # dye enable
 
 [env]
 TERM = "xterm-256color"
