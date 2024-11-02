@@ -1,18 +1,23 @@
 ;; bar window
 (defwindow bar
            :monitor 0
-           :geometry (geometry :x "-10px"
-                               :y "0px"
+           :geometry (geometry :x "6px"
+                               :y "-60px"
                                :width "50px"
                                :height "1188px"
                                :anchor "center right")
             :stacking "fg"
+
+            :exclusive true
+            :focusable false
+
             :reserve (struts :distance "60px" :side "right")
             :windowtype "dock"
             :wm-ignore false
+
             :vexpand "false"
             :hexpand "false"
-  (bar))
+(bar))
 
 ;; organizational widgets
 (defwidget bar []
@@ -55,7 +60,6 @@
                 :valign "start"
                 :spacing 15 
                 :class "workspaces"
-(workspace0)
 (workspace1)
 (workspace2)
 (workspace3)
@@ -64,57 +68,57 @@
 (workspace6)
 (workspace7)
 (workspace8)
-(workspace9)))
+(workspace9)
+(workspace10)))
 
-(defwidget workspace0 []
-  	(button		:class {"${workspace-focused}" == "0" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '0'"
-                {arraylength(search("${workspace-occupied}", "0")) != 0 ? "" : ""}))
 (defwidget workspace1 []
-  	(button		:class {"${workspace-focused}" == "1" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '1'"
-                {arraylength(search("${workspace-occupied}", "1")) != 0 ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "0" ? "focused" : "unfocused"}
+				:onclick "hyprctl dispatch workspace 1"
+                {arraylength(search("${workspace-occupied}", "0")) != 0 ? "🔘" : ""}))
 (defwidget workspace2 []
-  	(button		:class {"${workspace-focused}" == "2" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '2'"
-                {arraylength(search("${workspace-occupied}", "2")) != 0 ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "1" ? "focused" : "unfocused"}
+				:onclick "hyprctl dispatch workspace 2"
+                {arraylength(search("${workspace-occupied}", "1")) != 0 ? "🔘" : ""}))
 (defwidget workspace3 []
-  	(button		:class {"${workspace-focused}" == "3" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '3'"
-                {arraylength(search("${workspace-occupied}", "3")) != 0 ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "2" ? "focused" : "unfocused"}
+				:onclick "hyprctl dispatch workspace 3"
+                {arraylength(search("${workspace-occupied}", "2")) != 0 ? "🔘" : ""}))
 (defwidget workspace4 []
-  	(button		:class {"${workspace-focused}" == "4" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '4'"
-                {arraylength(search("${workspace-occupied}", "4")) != 0 ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "3" ? "focused" : "unfocused"}
+				:onclick "hyprctl dispatch workspace 4"
+                {arraylength(search("${workspace-occupied}", "3")) != 0 ? "🔘" : ""}))
 (defwidget workspace5 []
-  	(button		:class {"${workspace-focused}" == "5" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '5'"
-                {arraylength(search("${workspace-occupied}", "5")) != 0 ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "4" ? "focused" : "unfocused"}
+				:onclick "hyprctl dispatch workspace 5"
+                {arraylength(search("${workspace-occupied}", "4")) != 0 ? "🔘" : ""}))
 (defwidget workspace6 []
-  	(button		:class {"${workspace-focused}" == "6" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '6'"
-                {arraylength(search("${workspace-occupied}", "6")) != 0 ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "5" ? "focused" : "unfocused"}
+				:onclick "hyprctl dispatch workspace 6"
+                {arraylength(search("${workspace-occupied}", "5")) != 0 ? "🔘" : ""}))
 (defwidget workspace7 []
-  	(button		:class {"${workspace-focused}" == "7" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '7'"
-                {arraylength(search("${workspace-occupied}", "7")) != 0 ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "6" ? "focused" : "unfocused"}
+				:onclick "hyprctl dispatch workspace 7"
+                {arraylength(search("${workspace-occupied}", "6")) != 0 ? "🔘" : ""}))
 (defwidget workspace8 []
-  	(button		:class {"${workspace-focused}" == "8" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '8'"
-                {arraylength(search("${workspace-occupied}", "8")) != 0 ? "" : ""}))
+  	(button		:class {"${workspace-focused}" == "7" ? "focused" : "unfocused"}
+				:onclick "hyprctl dispatch workspace 8"
+                {arraylength(search("${workspace-occupied}", "7")) != 0 ? "🔘" : ""}))
 (defwidget workspace9 []
+  	(button		:class {"${workspace-focused}" == "8" ? "focused" : "unfocused"}
+				:onclick "hyprctl dispatch workspace 9"
+                {arraylength(search("${workspace-occupied}", "8")) != 0 ? "🔘" : ""}))
+(defwidget workspace10 []
   	(button		:class {"${workspace-focused}" == "9" ? "focused" : "unfocused"}
-				:onclick "bspc desktop -f '9'"
-                {arraylength(search("${workspace-occupied}", "9")) != 0 ? "" : ""}))
-(defpoll workspace-occupied :interval "5s" "bspc query -D -d .occupied --names | xargs echo")
-(defpoll workspace-focused :interval "5s" "bspc query -D -d focused --names")
+				:onclick "hyprctl dispatch workspace 10"
+                {arraylength(search("${workspace-occupied}", "9")) != 0 ? "🔘" : ""}))
+(defpoll workspace-occupied :interval "5s" "hyprctl workspaces | grep workspace | awk '{print ($3 - 1)}' | xargs echo")
+(defpoll workspace-focused :interval "5s" "hyprctl activeworkspace | grep workspace | awk '{print ($3 - 1)}'")
 
 ;; volume widget
 (defwidget volume []
   (eventbox :onhover "eww update volume=true"
                         :onhoverlost "eww update volume=false"
                         :cursor "pointer"
-                        :tooltip "volume"
                         :onclick "pactl set-sink-mute @DEFAULT_SINK@ toggle"
                         (box    :orientation "v"
                                         :space-evenly "false"
@@ -122,8 +126,7 @@
                                         :reveal volume
                         (scale :class "volumebar-${muted}"
                                     :value current-volume
-                                    :tooltip "volume"
-                                    :onchange "pactl set-sink-volume @DEFAULT_SINK@ {}%"
+                                    :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%"
                                     :orientation "v"
                                     :flipped true
                                     :max 100
@@ -132,16 +135,15 @@
                                         :reveal volume
                                         (label :class "volumetext" :text "${current-volume}%"))
                         (label :class "volume-icon-${muted}"
-                                    :text {muted == "yes" ? "" : ""} ))))
-(defpoll current-volume :interval "5s" "pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}' | tr -d '%'")
-(defpoll muted :interval "5s" "pactl get-sink-mute @DEFAULT_SINK@ | cut -c 7-")
+                                    :text {muted == "yes" ? "" : "" } ))))
+(defpoll current-volume :interval "5s" "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{printf \"%2.0f\", ($2 * 100)}'")
+(defpoll muted :interval "5s" "wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo 'yes' || echo 'no'")
 (defvar volume false)
 
 ;; backlight widget
 (defwidget backlight []
   (eventbox :onhover "eww update backlight=true"
                         :onhoverlost "eww update backlight=false"
-                        :tooltip "backlight"
                         :cursor "pointer"
                         (box    :orientation "v"
                                         :space-evenly "false"
@@ -149,8 +151,7 @@
                                         :reveal backlight
                         (scale :class "backlightbar"
                                     :value current-backlight
-                                    :tooltip "backlight%"
-                                    :onchange "light -S {}%"
+                                    :onchange "brightnessctl set {}%"
                                     :orientation "v"
                                     :flipped true
                                     :max 100
@@ -159,7 +160,7 @@
                                         :reveal backlight
                                         (label :class "backlighttext" :text "${current-backlight}%"))
                         (label :class "backlight-icon" :text ""))))
-(defpoll current-backlight :interval "5s" "printf '%.0f' $(light -G)")
+(defpoll current-backlight :interval "5s" "awk -v max=$(brightnessctl max) -v current=$(brightnessctl get) 'BEGIN { printf \"%2.0f\", ((current - 1) / max) * 100}'")
 (defvar backlight false)
 
 ;; time widget
@@ -178,7 +179,6 @@
 (defwidget battery []
   (eventbox :onhover "eww update battery=true"
                         :onhoverlost "eww update battery=false"
-                        :tooltip "battery"
                         (box    :orientation "v"
                                         :space-evenly "false"
                                         :class "batterymenu-slider"

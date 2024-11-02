@@ -147,6 +147,9 @@ vim.api.nvim_set_keymap("v", "gf", ":OpenInGHFileLines <CR>", { silent = true, n
 -- miscellaneous configuration
 --
 
+-- use terminal gui colors
+vim.opt.termguicolors = false
+
 -- always use system clipboard
 vim.opt.clipboard:append { 'unnamedplus' }
 

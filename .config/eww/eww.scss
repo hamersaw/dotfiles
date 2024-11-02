@@ -18,9 +18,9 @@ $white: #d0c8c6;
 .bar{
   color: $foreground;
   background-color: $background;
-  padding: .3rem;
+  padding: .4rem;
   //border: 1px solid $foreground;
-  //border-radius: 10px;
+  border-radius: 8px;
   font-family: "Font Awesome";
 }
 
@@ -28,7 +28,7 @@ $white: #d0c8c6;
   padding-top: 10px;
 }
 .workspaces{
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 .focused{
   color: $blue;
@@ -38,8 +38,9 @@ $white: #d0c8c6;
 }
 
 .time {
+  font-family: "Inconsolata";
   font-weight: bold;
-  font-size: 1.6em;
+  font-size: 1.8em;
   background-color: $background;
   color: $foreground;
 }
@@ -50,9 +51,11 @@ $white: #d0c8c6;
 }
 .volume-icon-yes{
   color: $red;
+  font-size: 0.8em;
 }
 .volume-icon-no{
   color: $green;
+  font-size: 0.8em;
 }
 .volumetext{
   font-size: 0.5em;
@@ -88,15 +91,15 @@ scale trough {
 }
 .battery-icon-good{
   color: $green;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 .battery-icon-ok{
   color: $yellow;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 .battery-icon-bad{
   color: $red;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 .batterytext{
   font-size: 0.5em;
