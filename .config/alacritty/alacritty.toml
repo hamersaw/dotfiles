@@ -1,0 +1,36 @@
+[colors.bright]
+black = "0x7e705a" # dye bright
+blue = "0x8ab3b5" # dye bright
+cyan = "0x7bbda4"  # dye bright
+green = "0xbeb55b"  # dye bright
+magenta = "0xa89bb9"  # dye bright
+red = "0xcb6077"  # dye bright
+white = "0xf5eeeb"  # dye bright
+yellow = "0xf4bc87"  # dye bright
+
+[colors.normal]
+black = "0x3b3228" # dye normal
+blue = "0x8ab3b5"  # dye normal
+cyan = "0x7bbda4"  # dye normal
+green = "0xbeb55b"  # dye normal
+magenta = "0xa89bb9"  # dye normal
+red = "0xcb6077"  # dye normal
+white = "0xd0c8c6"  # dye normal
+yellow = "0xf4bc87"  # dye normal
+
+[colors.primary]
+background = "0xf5eeeb" # dye enable
+foreground = "0x645240"  # dye enable
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 16
+
+[font.normal]
+family = "Inconsolata"
+
+[window.padding]
+x = 2
+y = 2
