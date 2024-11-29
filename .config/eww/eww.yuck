@@ -1,10 +1,10 @@
 ;; bar window
 (defwindow bar
            :monitor 0
-           :geometry (geometry :x "6px"
-                               :y "-60px"
+           :geometry (geometry :x "8px"
+                               :y "-58px"
                                :width "50px"
-                               :height "1188px"
+                               :height "1186px"
                                :anchor "center right")
             :stacking "fg"
 
@@ -111,7 +111,7 @@
   	(button		:class {"${workspace-focused}" == "9" ? "focused" : "unfocused"}
 				:onclick "hyprctl dispatch workspace 10"
                 {arraylength(search("${workspace-occupied}", "9")) != 0 ? "🔘" : ""}))
-(defpoll workspace-occupied :interval "5s" "hyprctl workspaces | grep workspace | awk '{print ($3 - 1)}' | xargs echo")
+(defpoll workspace-occupied :interval "5s" "hyprctl workspaces -j | jq '.[] | select(.windows!=0) | .id' | awk '{print ($1-1)}' | xargs echo")
 (defpoll workspace-focused :interval "5s" "hyprctl activeworkspace | grep workspace | awk '{print ($3 - 1)}'")
 
 ;; volume widget
