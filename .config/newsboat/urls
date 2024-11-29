@@ -1,38 +1,41 @@
 ## software development
-https://reddit.com/r/golang/.rss
-https://reddit.com/r/rust/.rss
-https://github.blog/category/engineering/feed
+#https://reddit.com/r/golang/.rss
+#https://reddit.com/r/rust/.rss
+https://blog.pragmaticengineer.com/feed/
 https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml
+https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml
 #https://softwareengineeringdaily.com/feed/podcast/
 #https://softwareengineeringdaily.com/category/all-episodes/exclusive-content/articles/feed
 
 ## linux blogs
-https://www.phoronix.com/rss.php
-https://reddit.com/r/linux/.rss
+#https://www.phoronix.com/rss.php
+#https://reddit.com/r/linux/.rss
 
 ## cloud blogs
-https://www.cncf.io/feed
-https://kubernetes.io/feed.xml
+#https://www.cncf.io/feed
+#https://kubernetes.io/feed.xml
 #https://aws.amazon.com/blogs/aws/feed/
 #https://aws.amazon.com/blogs/architecture/feed/
 #https://aws.amazon.com/blogs/storage/feed/
 #https://aws.amazon.com/blogs/big-data/feed/
 #https://aws.amazon.com/blogs/database/feed/
-#https://cloudblog.withgoogle.com/rss/
+https://cloudblog.withgoogle.com/rss/
 
 ## societies
 #https://www.eff.org/rss/updates.xml
 #https://www.internetsociety.org/feed/
 
 ## companies
-#https://github.blog/feed/
-#https://blog.mozilla.org/feed
 #https://medium.com/feed/airbnb-engineering
-#https://netflixtechblog.com/feed
+https://blog.cloudflare.com/rss/
+https://databricks.com/feed
+https://github.blog/feed/
+https://github.blog/category/engineering/feed
+#https://blog.mozilla.org/feed
+https://engineering.fb.com/feed
+#https://code.facebook.com/posts/rss/
+https://netflixtechblog.com/feed
 #https://slack.engineering/feed/
-#https://engineering.fb.com/feed
-https://code.facebook.com/posts/rss/
-#https://databricks.com/feed
 #https://www.hashicorp.com/blog/feed.xml
 
 ## research articles
