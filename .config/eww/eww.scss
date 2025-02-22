@@ -21,7 +21,6 @@ $white: #d0c8c6;
   padding: .4rem;
   //border: 1px solid $foreground;
   border-radius: 8px;
-  font-family: "Font Awesome";
 }
 
 .top{
@@ -32,9 +31,19 @@ $white: #d0c8c6;
 }
 .focused{
   color: $blue;
+  font-family: "Font Awesome 6 Free";
 }
 .unfocused{
   color: $foreground;
+  font-family: "Font Awesome 6 Free";
+}
+.focused-solid{
+  color: $blue;
+  font-family: "Font Awesome 6 Free Solid";
+}
+.unfocused-solid{
+  color: $foreground;
+  font-family: "Font Awesome 6 Free Solid";
 }
 
 .time {
