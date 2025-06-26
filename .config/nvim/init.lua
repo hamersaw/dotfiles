@@ -18,7 +18,30 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'rhysd/git-messenger.vim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
+
+-- avante
+--Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'stevearc/dressing.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
+-- Plug 'MeanderingProgrammer/render-markdown.nvim'
+Plug('yetone/avante.nvim', { ['branch'] = 'main', ['do'] = 'make' })
+
 vim.call('plug#end')
+
+--
+-- avante configuration
+--
+
+require('avante').setup({
+    provider = "copilot",
+    behavior = {
+        auto_suggestions = false,
+    },
+    hints = {
+        enabled = false,
+    },
+})
 
 --
 -- fern configuration
@@ -53,7 +76,7 @@ vim.keymap.set('n', 'gm', ':GitMessenger<CR>', { noremap = true, silent = true }
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   -- mappings
   local opts = { buffer = bufnr, noremap = true, silent = true }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -166,8 +189,22 @@ vim.api.nvim_set_keymap("n", "gf", ":OpenInGHFile <CR>", { silent = true, norema
 vim.api.nvim_set_keymap("v", "gf", ":OpenInGHFileLines <CR>", { silent = true, noremap = true })
 
 --
+-- treesitter configuration
+--
+
+--require'nvim-treesitter.configs'.setup {
+--  ensure_installed = { "markdown" }, -- only using for markdown formatting
+--  highlight = {
+--    enable = true,
+--    additional_vim_regex_highlighting = false,
+--  },
+--}
+
+--
 -- miscellaneous configuration
 --
+
+vim.g.mapleader = "\\"
 
 vim.opt.number = true
 -- vim.opt.relativenumber = true
