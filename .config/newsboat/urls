@@ -1,6 +1,10 @@
 ## blogs
-https://thenewstack.io/blog/feed/
-https://blog.pragmaticengineer.com/feed/
+#https://thenewstack.io/blog/feed/
+#https://blog.pragmaticengineer.com/feed/
+https://lucumr.pocoo.org/feed.atom
+https://muratbuffalo.blogspot.com/feeds/posts/default
+https://sympathetic.ink/feed.xml
+https://rmoff.net/index.xml
 
 ## software development
 #https://reddit.com/r/golang/.rss
@@ -22,20 +26,20 @@ https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml
 #https://aws.amazon.com/blogs/storage/feed/
 #https://aws.amazon.com/blogs/big-data/feed/
 #https://aws.amazon.com/blogs/database/feed/
-https://cloudblog.withgoogle.com/rss/
+#https://cloudblog.withgoogle.com/rss/
 
 ## societies
 #https://www.eff.org/rss/updates.xml
 #https://www.internetsociety.org/feed/
 
 ## companies
-#https://medium.com/feed/airbnb-engineering
-https://blog.cloudflare.com/rss/
-https://databricks.com/feed
-https://github.blog/feed/
+https://medium.com/feed/airbnb-engineering
+#https://blog.cloudflare.com/rss/
+#https://databricks.com/feed
+#https://github.blog/feed/
 https://github.blog/category/engineering/feed
-#https://blog.mozilla.org/feed
-https://engineering.fb.com/feed
+https://blog.mozilla.org/feed
+#https://engineering.fb.com/feed
 #https://code.facebook.com/posts/rss/
 https://netflixtechblog.com/feed
 #https://slack.engineering/feed/

@@ -26,7 +26,7 @@ foreground = "0x645240" # dye enable
 TERM = "xterm-256color"
 
 [font]
-size = 16
+size = 16 
 
 [font.normal]
 family = "Inconsolata"

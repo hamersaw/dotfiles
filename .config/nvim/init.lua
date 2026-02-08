@@ -8,40 +8,20 @@ Plug 'almo7aya/openingh.nvim'
 -- Plug 'ctrlpvim/ctrlp.vim'
 Plug 'github/copilot.vim'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
+Plug('hrsh7th/cmp-nvim-lsp', { ['commit'] = '39e2eda76828d88b773cc27a3f61d2ad782c922d'})
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'junegunn/fzf'
+-- Plug 'junegunn/fzf'
 Plug 'lambdalisue/fern.vim'
 Plug 'neovim/nvim-lspconfig'
 -- Plug 'preservim/nerdtree'
 Plug 'rhysd/git-messenger.vim'
+--Plug 'williamboman/mason.nvim'
+--Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
-
--- avante
---Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'stevearc/dressing.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'MunifTanjim/nui.nvim'
--- Plug 'MeanderingProgrammer/render-markdown.nvim'
-Plug('yetone/avante.nvim', { ['branch'] = 'main', ['do'] = 'make' })
+Plug('williamboman/mason-lspconfig.nvim', { ['tag'] = 'v1.32.0' })
 
 vim.call('plug#end')
-
---
--- avante configuration
---
-
-require('avante').setup({
-    provider = "copilot",
-    behavior = {
-        auto_suggestions = false,
-    },
-    hints = {
-        enabled = false,
-    },
-})
 
 --
 -- fern configuration
@@ -58,9 +38,8 @@ vim.api.nvim_create_autocmd("FileType", {
 -- fzf configuration
 --
 
-vim.keymap.set('n', '<C-p>', ':FZF<CR>', { noremap = true, silent = true })
-
-vim.g.fzf_layout = { down = '40%' }
+--vim.keymap.set('n', '<C-p>', ':FZF<CR>', { noremap = true, silent = true })
+--vim.g.fzf_layout = { down = '40%' }
 
 --
 -- git-messenger configuration
@@ -81,9 +60,9 @@ local on_attach = function(client, bufnr)
   local opts = { buffer = bufnr, noremap = true, silent = true }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-  --vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-  --vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, opts)
   --vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
@@ -210,8 +189,12 @@ vim.opt.number = true
 -- vim.opt.relativenumber = true
 
 -- use terminal gui colors
-vim.cmd 'colorscheme vim'
-vim.opt.termguicolors = false
+if vim.fn.has('nvim-0.10') > 0 then
+  vim.cmd.colorscheme('vim')
+end
+vim.opt.termguicolors = no
+--vim.cmd 'colorscheme vim'
+--vim.opt.termguicolors = true
 
 -- always use system clipboard
 vim.opt.clipboard:append { 'unnamedplus' }
