@@ -6,7 +6,7 @@ declare -A updates
 updates["background = \"0xDYECOLOR\" # dye enable"]="background"
 updates["foreground = \"0xDYECOLOR\" # dye enable"]="foreground"
 
-updates["blacka = \"0xDYECOLOR\" # dye normal"]="normal_black"
+updates["black = \"0xDYECOLOR\" # dye normal"]="normal_black"
 updates["red = \"0xDYECOLOR\" # dye normal"]="normal_red"
 updates["green = \"0xDYECOLOR\" # dye normal"]="normal_green"
 updates["yellow = \"0xDYECOLOR\" # dye normal"]="normal_yellow"

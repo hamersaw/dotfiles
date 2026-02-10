@@ -1,0 +1,9 @@
+#!/bin/bash
+
+config=".config/mako/config"
+
+declare -A updates
+updates["background-color=#DYECOLOR"]="background"
+updates["text-color=#DYECOLOR"]="foreground"
+
+updates["border-color=#DYECOLOR"]="normal_green"

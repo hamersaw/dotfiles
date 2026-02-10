@@ -1,0 +1,68 @@
+@import "./colors.css";
+
+* {
+  font-family: "Inconsolata";
+  font-size: 16pt;
+  font-weight: bold;
+  color: @foreground;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+window#waybar {
+  background: @background;
+  border-radius: 8px;
+}
+
+.modules-left {
+    padding-top: 10px;
+}
+
+/*.modules-center {
+    background: @color4;
+    border-radius: 12px;
+    margin: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}*/
+
+.modules-right {
+    padding-bottom: 10px;
+}
+
+#workspaces button label {
+    color: @color11;
+}
+
+#workspaces button.empty label {
+    color: @foreground;
+}
+
+#workspaces button:hover,
+#workspaces button:active {
+  background: @background;
+  border-width: 0px;
+}
+
+#workspaces button:active{}
+
+/*#battery,
+#tray,
+#wireplumber {
+    border-radius: 12px;
+    margin: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#battery {
+    background: @color2;
+}
+
+#tray {
+    background: @color6;
+}
+
+#wireplumber {
+    background: @color12;
+}*/

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+config=".config/sway/config"
+
+declare -A updates
+updates["set \$color_background #DYECOLOR"]="background"
+updates["set \$color_foreground #DYECOLOR"]="foreground"
+updates["set \$color_blue #DYECOLOR"]="normal_blue"
+updates["set \$color_red #DYECOLOR"]="normal_red"
+updates["set \$color_yellow #DYECOLOR"]="normal_yellow"

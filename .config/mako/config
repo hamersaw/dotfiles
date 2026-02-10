@@ -1,10 +1,10 @@
 font=Inconsolata 16
 width=480
 
-background-color=#d0c8c6ff
-text-color=#3b3228ff
+background-color=#f5eeeb
+text-color=#645240
 border-size=5
-border-color=#cb6077ff
+border-color=#beb55b
 border-radius=4
 
 anchor=center

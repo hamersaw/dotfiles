@@ -1,0 +1,66 @@
+{
+    "name": "waybar",
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "right",
+    "margin-right": 8,
+    "margin-top": 8,
+    "margin-bottom": 8,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "custom/brightness", "wireplumber", "battery"],
+    "battery": {
+        "format": "{capacity}%\n {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{0:%m}\n{0:%d}\n--\n{0:%H}\n{0:%M}"
+    },
+    "custom/brightness": {
+        "exec": "brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}'",
+        "format": "{}%\n\n---",
+        "interval": 5
+    },
+    "sway/workspaces": {
+        "all-outputs": true,
+        "disable-click": true,
+        "disable-scroll": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": "",
+            "urgent": "",
+            "focused": ""
+        },
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    },
+    "wireplumber": {
+        "format": "{volume}%\n{icon}\n---",
+        "format-icons": {
+            "headphones": "",
+            "headset": "",
+            "speaker": "",
+            "default": ""
+        },
+        "format-muted": " \n---"
+    }
+}

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+config=".config/waybar/colors.css"
+
+declare -A updates
+updates["@define-color background #DYECOLOR;"]="background"
+updates["@define-color foreground #DYECOLOR;"]="foreground"
+
+updates["@define-color color0 #DYECOLOR;"]="normal_black"
+updates["@define-color color1 #DYECOLOR;"]="normal_red"
+updates["@define-color color2 #DYECOLOR;"]="normal_green"
+updates["@define-color color3 #DYECOLOR;"]="normal_yellow"
+updates["@define-color color4 #DYECOLOR;"]="normal_blue"
+updates["@define-color color5 #DYECOLOR;"]="normal_magenta"
+updates["@define-color color6 #DYECOLOR;"]="normal_white"
+updates["@define-color color7 #DYECOLOR;"]="bright_black"
+updates["@define-color color8 #DYECOLOR;"]="bright_red"
+updates["@define-color color9 #DYECOLOR;"]="bright_green"
+updates["@define-color color10 #DYECOLOR;"]="bright_yellow"
+updates["@define-color color11 #DYECOLOR;"]="bright_blue"
+updates["@define-color color12 #DYECOLOR;"]="bright_magenta"
+updates["@define-color color13 #DYECOLOR;"]="bright_white"
