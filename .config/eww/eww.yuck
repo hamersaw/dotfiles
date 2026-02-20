@@ -4,7 +4,7 @@
            :geometry (geometry :x "8px"
                                :y "-58px"
                                :width "50px"
-                               :height "1186px"
+                               :height "1268px"
                                :anchor "center right")
             :stacking "fg"
 
@@ -72,67 +72,38 @@
 (workspace10)))
 
 (defwidget workspace1 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "0")) != 0 ?
-                    "${"${workspace-focused}" == "0" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "0" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 1"
-                ""))
+    (button		:class {"${workspace-focused}" == "1x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "1x")) != 0 ? "" : ""}))
 (defwidget workspace2 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "1")) != 0 ?
-                    "${"${workspace-focused}" == "1" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "1" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 2"
-                ""))
+    (button		:class {"${workspace-focused}" == "2x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "2x")) != 0 ? "" : ""}))
 (defwidget workspace3 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "2")) != 0 ?
-                    "${"${workspace-focused}" == "2" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "2" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 3"
-                ""))
+    (button		:class {"${workspace-focused}" == "3x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "3x")) != 0 ? "" : ""}))
 (defwidget workspace4 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "3")) != 0 ?
-                    "${"${workspace-focused}" == "3" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "3" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 4"
-                ""))
+    (button		:class {"${workspace-focused}" == "4x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "4x")) != 0 ? "" : ""}))
 (defwidget workspace5 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "4")) != 0 ?
-                    "${"${workspace-focused}" == "4" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "4" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 5"
-                ""))
+    (button		:class {"${workspace-focused}" == "5x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "5x")) != 0 ? "" : ""}))
 (defwidget workspace6 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "5")) != 0 ?
-                    "${"${workspace-focused}" == "5" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "5" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 6"
-                ""))
+    (button		:class {"${workspace-focused}" == "6x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "6x")) != 0 ? "" : ""}))
 (defwidget workspace7 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "6")) != 0 ?
-                    "${"${workspace-focused}" == "6" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "6" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 7"
-                ""))
+    (button		:class {"${workspace-focused}" == "7x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "7x")) != 0 ? "" : ""}))
 (defwidget workspace8 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "7")) != 0 ?
-                    "${"${workspace-focused}" == "7" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "7" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 8"
-                ""))
+    (button		:class {"${workspace-focused}" == "8x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "8x")) != 0 ? "" : ""}))
 (defwidget workspace9 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "8")) != 0 ?
-                    "${"${workspace-focused}" == "8" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "8" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 9"
-                ""))
+    (button		:class {"${workspace-focused}" == "9x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "9x")) != 0 ? "" : ""}))
 (defwidget workspace10 []
-  	(button		:class {arraylength(search("${workspace-occupied}", "9")) != 0 ?
-                    "${"${workspace-focused}" == "9" ? "focused-solid" : "unfocused-solid"}" :
-                    "${"${workspace-focused}" == "9" ? "focused" : "unfocused"}"}
-				:onclick "hyprctl dispatch workspace 10"
-                ""))
-(defpoll workspace-occupied :interval "5s" "hyprctl workspaces -j | jq '.[] | select(.windows!=0) | .id' | awk '{print ($1-1)}' | xargs echo")
-(defpoll workspace-focused :interval "5s" "hyprctl activeworkspace | grep workspace | awk '{print ($3 - 1)}'")
+    (button		:class {"${workspace-focused}" == "10x" ? "focused" : "unfocused"}
+         {arraylength(search("${workspace-occupied}", "10x")) != 0 ? "" : ""}))
+
+(defpoll workspace-occupied :interval "5s" "swaymsg -t get_workspaces | jq '.[] | .num' | xargs printf -- '%sx\n'")
+(defpoll workspace-focused :interval "5s" "swaymsg -t get_workspaces | jq '.[] | select(.focused==true) | .num' | xargs printf -- '%sx\n'")
 
 ;; volume widget
 (defwidget volume []
