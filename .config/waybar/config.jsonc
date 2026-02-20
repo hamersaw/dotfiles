@@ -10,13 +10,15 @@
     "modules-center": ["clock"],
     "modules-right": ["tray", "custom/brightness", "wireplumber", "battery"],
     "battery": {
-        "format": "{capacity}%\n {icon}",
+        "justify": "center",
+        "format": "{capacity}%\n{icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
         "format": "{0:%m}\n{0:%d}\n--\n{0:%H}\n{0:%M}"
     },
     "custom/brightness": {
+        "justify": "center",
         "exec": "brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}'",
         "format": "{}%\n\n---",
         "interval": 5
@@ -54,6 +56,7 @@
         }
     },
     "wireplumber": {
+        "justify": "center",
         "format": "{volume}%\n{icon}\n---",
         "format-icons": {
             "headphones": "",
@@ -61,6 +64,6 @@
             "speaker": "",
             "default": ""
         },
-        "format-muted": " \n---"
+        "format-muted": "\n---"
     }
 }

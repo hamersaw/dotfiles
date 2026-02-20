@@ -20,6 +20,7 @@ Plug 'rhysd/git-messenger.vim'
 --Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'williamboman/mason.nvim'
 Plug('williamboman/mason-lspconfig.nvim', { ['tag'] = 'v1.32.0' })
+Plug 'mfussenegger/nvim-jdtls'
 
 vim.call('plug#end')
 
@@ -111,6 +112,9 @@ require("mason-lspconfig").setup_handlers {
       capabilities = capabilities,
       on_attach = on_attach,
     }
+  end,
+  ["jdtls"] = function()
+    -- configured via ftplugin/java.lua using nvim-jdtls
   end,
 }
 
