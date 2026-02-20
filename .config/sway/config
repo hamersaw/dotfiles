@@ -30,7 +30,7 @@ include /etc/sway/config-vars.d/*
 # package `sway-backgrounds`. Installing this package drops a config file to
 # /etc/sway/config.d/
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#output * bg /home/hamersaw/Pictures/wallpapers/PXL_20250914_184910716.jpg fill
+output * bg /home/hamersaw/Pictures/wallpapers/PXL_20250914_184910716.jpg fill
 #
 # Example configuration:
 #
@@ -273,10 +273,10 @@ default_floating_border pixel 5
 focus_wrapping no
 
 # swayfx specific configuration
-#smart_corner_radius on
-#corner_radius 5
-#shadows on
-#shadow_blur_radius 20
+smart_corner_radius on
+corner_radius 5
+shadows on
+shadow_blur_radius 20
 
 for_window [app_id="menu"] floating enable, resize set 1120 450
 
