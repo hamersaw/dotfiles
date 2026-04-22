@@ -14,6 +14,20 @@ https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml
 #https://softwareengineeringdaily.com/feed/podcast/
 #https://softwareengineeringdaily.com/category/all-episodes/exclusive-content/articles/feed
 
+# tools
+https://datafusion.apache.org/blog/feed.xml
+https://delta.io/rss.xml
+https://clickhouse.com/rss.xml
+file:///home/hamersaw/.local/share/refresh-blogs/materialize.xml  "~Materialize Blog"
+file:///home/hamersaw/.local/share/refresh-blogs/motherduck.xml   "~MotherDuck Blog"
+file:///home/hamersaw/.local/share/refresh-blogs/pixeltable.xml   "~Pixeltable Blog"
+file:///home/hamersaw/.local/share/refresh-blogs/risingwave.xml   "~RisingWave Blog"
+file:///home/hamersaw/.local/share/refresh-blogs/tigerdata.xml    "~TigerData Blog"
+https://trino.io/blog/feed.xml
+https://turbopuffer.com/blog/rss.xml
+file:///home/hamersaw/Downloads/build-rss/feeds/vortex.xml       "~Vortex Blog"
+
+
 ## linux blogs
 #https://www.phoronix.com/rss.php
 #https://reddit.com/r/linux/.rss
@@ -33,15 +47,15 @@ https://mshibanami.github.io/GitHubTrendingRSS/weekly/all.xml
 #https://www.internetsociety.org/feed/
 
 ## companies
-https://medium.com/feed/airbnb-engineering
+#https://medium.com/feed/airbnb-engineering
 #https://blog.cloudflare.com/rss/
 #https://databricks.com/feed
 #https://github.blog/feed/
-https://github.blog/category/engineering/feed
-https://blog.mozilla.org/feed
+#https://github.blog/category/engineering/feed
+#https://blog.mozilla.org/feed
 #https://engineering.fb.com/feed
 #https://code.facebook.com/posts/rss/
-https://netflixtechblog.com/feed
+#https://netflixtechblog.com/feed
 #https://slack.engineering/feed/
 #https://www.hashicorp.com/blog/feed.xml
 

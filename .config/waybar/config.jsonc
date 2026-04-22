@@ -9,9 +9,12 @@
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": ["tray", "custom/brightness", "wireplumber", "battery"],
+    "tray": {
+        "icon-size": 24
+    },
     "battery": {
         "justify": "center",
-        "format": "{capacity}%\n{icon}",
+        "format": "---\n{capacity}%\n{icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
@@ -20,7 +23,7 @@
     "custom/brightness": {
         "justify": "center",
         "exec": "brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}'",
-        "format": "{}%\n\n---",
+        "format": "---\n{}%\n",
         "interval": 5
     },
     "sway/workspaces": {
@@ -57,13 +60,13 @@
     },
     "wireplumber": {
         "justify": "center",
-        "format": "{volume}%\n{icon}\n---",
+        "format": "---\n{volume}%\n{icon}",
         "format-icons": {
             "headphones": "",
             "headset": "",
             "speaker": "",
             "default": ""
         },
-        "format-muted": "\n---"
+        "format-muted": "---\n"
     }
 }

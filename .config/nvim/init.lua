@@ -13,14 +13,15 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 -- Plug 'junegunn/fzf'
 Plug 'lambdalisue/fern.vim'
-Plug 'neovim/nvim-lspconfig'
+Plug('neovim/nvim-lspconfig', { ['tag'] = 'v1.8.0' })
 -- Plug 'preservim/nerdtree'
 Plug 'rhysd/git-messenger.vim'
---Plug 'williamboman/mason.nvim'
---Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'williamboman/mason.nvim'
 Plug('williamboman/mason-lspconfig.nvim', { ['tag'] = 'v1.32.0' })
-Plug 'mfussenegger/nvim-jdtls'
+
+-- dev for ullr review tool
+Plug '~/Development/ullr.nvim'
+Plug 'MunifTanjim/nui.nvim'
 
 vim.call('plug#end')
 
@@ -113,9 +114,6 @@ require("mason-lspconfig").setup_handlers {
       on_attach = on_attach,
     }
   end,
-  ["jdtls"] = function()
-    -- configured via ftplugin/java.lua using nvim-jdtls
-  end,
 }
 
 --
@@ -191,14 +189,30 @@ vim.g.mapleader = "\\"
 
 vim.opt.number = true
 -- vim.opt.relativenumber = true
+vim.opt.updatetime = 300
 
 -- use terminal gui colors
 if vim.fn.has('nvim-0.10') > 0 then
   vim.cmd.colorscheme('vim')
 end
-vim.opt.termguicolors = no
---vim.cmd 'colorscheme vim'
---vim.opt.termguicolors = true
+vim.opt.termguicolors = false
+
+-- set diff colors
+vim.opt.fillchars:append({ diff = ' ' })
+
+local function apply()
+  vim.api.nvim_set_hl(0, 'DiffAdd', { ctermbg = 'LightGreen' })
+  vim.api.nvim_set_hl(0, 'DiffChange', { ctermbg = 'LightBlue'})
+  vim.api.nvim_set_hl(0, 'DiffDelete', { ctermbg = 'LightRed'})
+  vim.api.nvim_set_hl(0, 'DiffText', { ctermbg = 'Blue', ctermfg = 'Black' })
+end
+
+apply()
+
+vim.api.nvim_create_autocmd('ColorScheme', {
+  group = vim.api.nvim_create_augroup('UllrDiffColors', { clear = true }),
+  callback = apply,
+})
 
 -- always use system clipboard
 vim.opt.clipboard:append { 'unnamedplus' }

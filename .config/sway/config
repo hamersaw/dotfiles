@@ -30,7 +30,8 @@ include /etc/sway/config-vars.d/*
 # package `sway-backgrounds`. Installing this package drops a config file to
 # /etc/sway/config.d/
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/hamersaw/Pictures/wallpapers/PXL_20250914_184910716.jpg fill
+#output * bg /home/hamersaw/Pictures/wallpapers/PXL_20250914_184910716.jpg fill
+output * bg /home/hamersaw/Pictures/wallpapers/IMG_1331.JPEG fill
 #
 # Example configuration:
 #
@@ -40,7 +41,7 @@ output * bg /home/hamersaw/Pictures/wallpapers/PXL_20250914_184910716.jpg fill
 
 output eDP-1 mode 2880x1800 pos 0,0
 output HDMI-A-1 mode 3240x2160 pos 0,-1800 scale 1.3
-
+output DP-3 mode 3840x2560 pos 0,-2560 scale 1.4
 
 ### Idle configuration
 #
@@ -190,6 +191,8 @@ output eDP-1 scale 1.4
 #
 # Resizing containers:
 #
+set $resize ~/.config/sway/sway-resize.py
+
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
@@ -210,7 +213,15 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+# disabling resize mode
+#bindsym $mod+r mode "resize"
+
+# Intuitive directional resize (moves nearest border in that direction)
+bindsym $mod+Ctrl+h exec $resize left 144px
+bindsym $mod+Ctrl+j exec $resize down 90px
+bindsym $mod+Ctrl+k exec $resize up 90px
+bindsym $mod+Ctrl+l exec $resize right 144px
+
 #
 # Utilities:
 #
@@ -282,5 +293,6 @@ for_window [app_id="menu"] floating enable, resize set 1120 450
 
 bindsym $mod+Shift+n exec makoctl dismiss
 
-#exec eww daemon && eww open bar
+exec drata-agent-loop.sh
 exec waybar
+#exec eww daemon && eww open bar
